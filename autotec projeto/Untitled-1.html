@@ -9,46 +9,155 @@
     <title>Document</title>
 
     <style>
-      nav{
-        padding-left: 1rem;
-        padding-right: 1rem;
+
+
+:root{
+  --color-dark:  #101114;
+  --color-dark2: #18181B;
+  --color-dark3: #1A1B1E;
+  --color-white: #fff;
+  --color-light: #DDDCDA;
+  --color-light2:#CDC9C2;
+  --color-light3:#C4C1BC;  
+}
+ 
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+nav{
+        height: 5vw;
+        background-color: var(--color-light2);
+        display: flex;
+        justify-content: space-between;
+        padding: 0 2rem 0 2rem;
       }
+
+.darkColor{
+    background-color: var(--color-dark);
+    transition: all 0.25s ease-in-out;
+}
+.darkColor2{
+    background-color: var(--color-dark2);
+    transition: all 0.25s ease-in-out;
+}
+.darkColor3{
+    background-color: var(--color-dark3);
+    transition: all 0.25s ease-in-out;
+}
+
+.lightColor{
+    background-color: var(--color-light);
+    transition: all 0.25s ease-in-out;
+}
+.lightColor2{
+    background-color: var(--color-light2);
+    transition: all 0.25s ease-in-out;
+}
+.lightColor3{
+    background-color: var(--color-light3);
+    transition: all 0.25s ease-in-out;
+}
+
+button{
+    padding: 5px 10px;
+    border: 0;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: 300;
+    margin: 0 10px;
+}
+
+.button, h1{
+       justify-content: center;
+       align-items: center;
+       position: relative;
+       margin-top: auto;
+       margin-bottom: auto;
+       flex-wrap: wrap;
+       flex-direction: row;
+    }
+.button{
+      justify-content: right;
+    }
+   
+ body{
+      background-color: var(--color-light);
+    }
+footer{
+      height:4vw;
+      width: 100vw;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: yellow;
+      box-sizing: border-box;
+      background-color: var(--color-light3);
+      bottom: 0;
+      margin-top: 1.5rem;
+    }
+
+a:link, a:visited, .navElementos{
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  margin: 0 10px 0 10px ;
+  
+}
+
+a:hover, a:active,.navElementos {
+  
+  color: yellow;
+} 
+
+
+/* 
+  PALETA:
+
+  cinza: #818181
+  cinza mais clarinho: #57554F
+
+  amarelo light: #ffdc19
+  amarelo +light: #ffde66
+
+  amarelo dark: #cca414
+  amarelo +dark: #80670d
+
+  --color-dark:   #101114  ;
+  --color-dark2:  #1A1A20 ;
+  --color-dark3:  #272832;
+  --color-white:  #fff;
+  --color-light:  #DDDCDA;
+  --color-light2: #CDC9C2;
+  --color-light3: #C4C1BC;
+*/
+ 
 
     </style>
 </head>
-<body>
-  
+<body id="corTexto">
+
     <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#"><img src="images/logo.svg" width="50px" height="50px" alt="logo autotec"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Alterna navegação">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(Página atual)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Destaques</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Preços</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Link dropdown
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Ação</a>
-              <a class="dropdown-item" href="#">Outra ação</a>
-              <a class="dropdown-item" href="#">Algo mais aqui</a>
-            </div>
-          </li>
-        </ul>
+    <nav class="navbar" style="font-family: sans-serif;">
+      <div class="navElementos">
+        <a href="Untitled-1.html"> <img src="images/logo.svg" alt="logo autotec" width="90" height="90"></a>
+        <a href="#quemSomos">Quem somos?</a>
+        <a href="#servicos">Um de nossos serviços</a>
+        <a href="#">ALGUM OUTRO TOPICO</a>
+      </div>
+
+      <div class="button">
+      <button class="btn btn-dark" id="btn-dark" >Dark</button>   
+      <button class="btn btn-light" id="btn-light">Light</button>
       </div>
     </nav>
 
+
+      
     <!-- CARROSEL -->
       
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -84,65 +193,30 @@
       <hr style="border: 2px solid #ffdc19;">
 
 
-      
-    <!-- CARDS -->
-    <div class="container">
-    <div class="row" style="margin-top: 1.5rem ;">
-     <div class="card-deck">
-      <div class="row">
-      <div class="card">
-        <img class="card-img-bottom" src="images/img1.svg" width="50px" height="200px" alt="Imagem de capa do card">
-        <div class="card-body">
-          <h5 class="card-title">Título do card</h5>
-          <p class="card-text">Este é um card mais longo com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional. Este conteúdo é um pouco maior.</p>
-          <p class="card-text"><small class="text-muted">Atualizados 3 minutos atrás</small></p>
-        </div>
-      </div>
-     </div>
-     
-      <div class="card">
-        <div class="row">
-        <img class="card-img-top" src=".../100px200/" alt="Imagem de capa do card">
-        <div class="card-body">
-          <h5 class="card-title">Título do card</h5>
-          <p class="card-text">Este é um card com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional.</p>
-          <p class="card-text"><small class="text-muted">Atualizados 3 minutos atrás</small></p>
-        </div>
-       </div>
-    </div>
-      <div class="row">
-      <div class="card">
-        <img class="card-img-top" src=".../100px200/" alt="Imagem de capa do card">
-        <div class="card-body">
-          <h5 class="card-title">Título do card</h5>
-          <p class="card-text">Este é um card maior com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional. Este card tem o conteúdo ainda maior que o primeiro, para mostrar a altura igual, em ação.</p>
-          <p class="card-text"><small class="text-muted">Atualizados 3 minutos atrás</small></p>
-        </div>
-      </div>
-     </div>
-     </div>
-    </div>
+ <!-- START THE FEATURETTES -->
 
-
-<!-- START THE FEATURETTES -->
-
-    <hr class="featurette-divider">
-
+    
+  <div class="container">
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1">First featurette heading. <span class="text-body-secondary">It’ll blow your mind.</span></h2>
-        <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose here.</p>
+        <h2 class="featurette-heading fw-normal lh-1" id="quemSomos">Quem somos?</h2>
+        <p class="lead">Some great placeholder content for the first featurette here. 
+          Imagine some exciting prose here. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+          Dolor beatae rerum voluptates dignissimos et cupiditate sit, officia aperiam. 
+          Odit ad atque ullam inventore temporibus vel explicabo quam labore qui tenetur. 
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod ea iste aspernatur eum, 
+          ab in temporibus ullam aliquid. Saepe ut laborum optio modi, repellat libero iure maiores adipisci blanditiis sit.</p>
       </div>
       <div class="col-md-5">
         <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
       </div>
     </div>
 
-    <hr class="featurette-divider">
+    <hr style="border: 2px solid #ffdc19;">
 
     <div class="row featurette">
       <div class="col-md-7 order-md-2">
-        <h2 class="featurette-heading fw-normal lh-1">Oh yeah, it’s that good. <span class="text-body-secondary">See for yourself.</span></h2>
+        <h2 class="featurette-heading fw-normal lh-1" id="servicos">Um de nossos serviços para você!</h2>
         <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
       </div>
       <div class="col-md-5 order-md-1">
@@ -150,31 +224,50 @@
       </div>
     </div>
 
-    <hr class="featurette-divider">
+    <hr style="border: 2px solid #ffdc19;">
 
     <div class="row featurette">
       <div class="col-md-7">
-        <h2 class="featurette-heading fw-normal lh-1">And lastly, this one. <span class="text-body-secondary">Checkmate.</span></h2>
+        <h2 class="featurette-heading fw-normal lh-1" id="#">ALGUM OUTRO TEXTO/CONTEUDO</h2>
         <p class="lead">And yes, this is the last block of representative placeholder content. Again, not really intended to be actually read, simply here to give you a better view of what this would look like with some actual content. Your content.</p>
       </div>
       <div class="col-md-5">
         <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"/><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">500x500</text></svg>
       </div>
     </div>
-
-    <hr class="featurette-divider">
-
+ </div>
     <!-- /END THE FEATURETTES -->
 
-    </div>
-  
-    
+ </div>
+  <!-- FOOTER -->
+  <footer>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis harum dolor corrupti tempo</p>
+  </footer>
+ </div>   
 
   <!-- JavaScript (Opcional) -->
   <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  
+  <script>
+     document.getElementById("btn-dark").addEventListener("click", function(){
+     document.querySelector("body").setAttribute("class","darkColor");
+     document.querySelector("nav").setAttribute("class","darkColor2");
+     document.querySelector("footer").setAttribute("class","darkColor3");
+     document.getElementById('corTexto').style.color = 'white';
+  })
+
+
+    document.getElementById("btn-light").addEventListener("click", function(){
+    document.querySelector("body").setAttribute("class","lightColor");
+    document.querySelector("nav").setAttribute("class","lightColor2");
+    document.querySelector("footer").setAttribute("class","lightColor3");
+    document.getElementById('corTexto').style.color = 'black';
+})
+
+  </script>
 </body>
 </html>
 </body>
